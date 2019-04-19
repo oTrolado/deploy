@@ -83,7 +83,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#progresso{\n\tposition: absolute;\n    top: 0;\n    z-index: 2;\n    height: 100vh;\n    width: 100vw;\n    background-color: rgba(900,900,900,.5);\n}\n\n.mat-spinner{ margin: 40vh auto }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxrQkFBa0I7SUFDZixNQUFNO0lBQ04sVUFBVTtJQUNWLGFBQWE7SUFDYixZQUFZO0lBQ1osc0NBQXNDO0FBQzFDOztBQUVBLGNBQWMsa0JBQWtCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcHJvZ3Jlc3Nve1xuXHRwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgdG9wOiAwO1xuICAgIHotaW5kZXg6IDI7XG4gICAgaGVpZ2h0OiAxMDB2aDtcbiAgICB3aWR0aDogMTAwdnc7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogcmdiYSg5MDAsOTAwLDkwMCwuNSk7XG59XG5cbi5tYXQtc3Bpbm5lcnsgbWFyZ2luOiA0MHZoIGF1dG8gfSJdfQ== */"
+module.exports = "#progresso{\n\tposition: fixed;\n    top: 0;\n    right: 0;\n    z-index: 2;\n    height: 100vh;\n    width: 100vw;\n    background-color: rgba(900,900,900,.5);\n}\n\n.mat-spinner{ margin: 40vh auto }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxlQUFlO0lBQ1osTUFBTTtJQUNOLFFBQVE7SUFDUixVQUFVO0lBQ1YsYUFBYTtJQUNiLFlBQVk7SUFDWixzQ0FBc0M7QUFDMUM7O0FBRUEsY0FBYyxrQkFBa0IiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNwcm9ncmVzc297XG5cdHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDA7XG4gICAgcmlnaHQ6IDA7XG4gICAgei1pbmRleDogMjtcbiAgICBoZWlnaHQ6IDEwMHZoO1xuICAgIHdpZHRoOiAxMDB2dztcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDkwMCw5MDAsOTAwLC41KTtcbn1cblxuLm1hdC1zcGlubmVyeyBtYXJnaW46IDQwdmggYXV0byB9Il19 */"
 
 /***/ }),
 
@@ -313,7 +313,7 @@ module.exports = "button{ margin: 10px 0 0 auto; width: 120px;}\n.mat-display-3{
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"container\" id=\"cardapios\">\n\n\t<h1 class=\"mat-display-3\"> Cardápios </h1>\n\n\t<mat-tab-group color=\"accent\">\n\n\t\t<mat-tab *ngFor=\"let cardapio of cardapios\" [label]=\"cardapio.nome_dia_da_semana\">\n\n\t\t\t<mat-card>\n\t\t\t\t<form class=\"formCardapios\">\n\t\t\t\t\t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Prato Principal</mat-label>\n\t                \t<input name=\"pratoPrincipal\" matInput placeholder=\"cardapio.pratoPrincipal\" required  [(ngModel)]=\"cardapio.pratoPrincipal\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Opção 1</mat-label>\n\t                \t<input name=\"opcao1\" matInput placeholder=\"cardapio.opcao1\" required  [(ngModel)]=\"cardapio.opcao1\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Opção 2</mat-label>\n\t                \t<input name=\"opcao2\" matInput placeholder=\"cardapio.opcao2\" required  [(ngModel)]=\"cardapio.opcao2\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Guarnição 1</mat-label>\n\t                \t<input name=\"guarnicao1\" matInput placeholder=\"cardapio.guarnicao1\" required  [(ngModel)]=\"cardapio.guarnicao1\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Guarnição 2</mat-label>\n\t                \t<input name=\"guarnicao2\" matInput placeholder=\"cardapio.guarnicao2\" required  [(ngModel)]=\"cardapio.guarnicao2\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Salada</mat-label>\n\t                \t<input name=\"salada\" matInput placeholder=\"cardapio.salada\" required  [(ngModel)]=\"cardapio.salada\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Sobremesa</mat-label>\n\t                \t<input name=\"sobremesa\" matInput placeholder=\"cardapio.sobremesa\" required  [(ngModel)]=\"cardapio.sobremesa\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field color=\"accent\"  appearance=\"outline\" color=\"accent\">\n\t\t\t\t\t  <mat-label>Data</mat-label>\n\t\t\t\t\t  <input name=\"data\" matInput [matDatepicker]=\"picker\" placeholder=\"Selecione a data\" required [(ngModel)]=\"cardapio.data\">\n\t\t\t\t\t  <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n\t\t\t\t\t  <mat-datepicker #picker></mat-datepicker>\n\t\t\t\t\t</mat-form-field>\n\n\t              \t<button mat-flat-button color=\"accent\" (click)=\"confirma(cardapio);\"><strong>Confirmar</strong></button>\n\t\t\t\t</form>\n\t\t\t</mat-card>\n\t\t\t\n\t\t</mat-tab>\n\t\t\n\t</mat-tab-group>\n\n</article>"
+module.exports = "<article class=\"container\" id=\"cardapios\">\n\n\t<h1 class=\"mat-display-3\"> Cardápios </h1>\n\n\t<mat-tab-group color=\"accent\">\n\n\t\t<mat-tab *ngFor=\"let cardapio of cardapios\" [label]=\"cardapio.nome_dia_da_semana\">\n\n\t\t\t<mat-card>\n\t\t\t\t<form class=\"formCardapios\">\n\t\t\t\t\t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Prato Principal</mat-label>\n\t                \t<input name=\"pratoPrincipal\" matInput [placeholder]=\"cardapio.pratoPrincipal\" required  [(ngModel)]=\"cardapio.pratoPrincipal\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Opção 1</mat-label>\n\t                \t<input name=\"opcao1\" matInput [placeholder]=\"cardapio.opcao1\" required  [(ngModel)]=\"cardapio.opcao1\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Opção 2</mat-label>\n\t                \t<input name=\"opcao2\" matInput [placeholder]=\"cardapio.opcao2\" required  [(ngModel)]=\"cardapio.opcao2\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Guarnição 1</mat-label>\n\t                \t<input name=\"guarnicao1\" matInput [placeholder]=\"cardapio.guarnicao1\" required  [(ngModel)]=\"cardapio.guarnicao1\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Guarnição 2</mat-label>\n\t                \t<input name=\"guarnicao2\" matInput [placeholder]=\"cardapio.guarnicao2\" required  [(ngModel)]=\"cardapio.guarnicao2\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Salada</mat-label>\n\t                \t<input name=\"salada\" matInput [placeholder]=\"cardapio.salada\" required  [(ngModel)]=\"cardapio.salada\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field appearance=\"outline\" color=\"accent\" >\n\t                \t<mat-label>Sobremesa</mat-label>\n\t                \t<input name=\"sobremesa\" matInput [placeholder]=\"cardapio.sobremesa\" required  [(ngModel)]=\"cardapio.sobremesa\">\n\t              \t</mat-form-field>\n\n\t              \t<mat-form-field color=\"accent\"  appearance=\"outline\" color=\"accent\">\n\t\t\t\t\t  <mat-label>Data</mat-label>\n\t\t\t\t\t  <input name=\"data\" matInput [matDatepicker]=\"picker\" placeholder=\"Selecione a data\" required [(ngModel)]=\"cardapio.data\">\n\t\t\t\t\t  <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\n\t\t\t\t\t  <mat-datepicker #picker></mat-datepicker>\n\t\t\t\t\t</mat-form-field>\n\n\t              \t<button mat-flat-button color=\"accent\" (click)=\"confirma(cardapio);\"><strong>Confirmar</strong></button>\n\t\t\t\t</form>\n\t\t\t</mat-card>\n\t\t\t\n\t\t</mat-tab>\n\t\t\n\t</mat-tab-group>\n\n</article>"
 
 /***/ }),
 
@@ -516,7 +516,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" id=\"login\">\n   <mat-tab-group color=\"accent\">\n      <mat-tab label=\"Entrar\">\n          <mat-card class=\"card-login\">\n            <form id=\"formlogin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"1234\" required  [(ngModel)]=\"usuario.user\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"login()\"><strong>Entrar</strong></button>\n            </form>\n          </mat-card>  \n      </mat-tab>\n      <mat-tab label=\"Cadastrar\"> \n        <mat-card class=\"card-login\">\n          <form id=\"singin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"1234\" required [(ngModel)]=\"usuario.user\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Nome</mat-label>\n                <input name=\"nome\" matInput placeholder=\"Mario\" required [(ngModel)]=\"usuario.nome\"  >\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Email</mat-label>\n                <input name=\"email\" matInput placeholder=\"mario@smn.com.br\" required [(ngModel)]=\"usuario.email\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Confirme a senha</mat-label>\n                <input name=\"confirma\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.confirma\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"singin()\"><strong>Cadastrar</strong></button>\n            </form>\n        </mat-card>\n      </mat-tab>\n    </mat-tab-group>\n </div>\n"
+module.exports = "<div class=\"container\" id=\"login\">\n   <mat-tab-group color=\"accent\">\n      <mat-tab label=\"Entrar\">\n          <mat-card class=\"card-login\">\n            <form id=\"formlogin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"login123\" required  [(ngModel)]=\"usuario.user\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"login()\"><strong>Entrar</strong></button>\n            </form>\n          </mat-card>  \n      </mat-tab>\n      <mat-tab label=\"Cadastrar\"> \n        <mat-card class=\"card-login\">\n          <form id=\"singin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"1234\" required [(ngModel)]=\"usuario.user\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Nome</mat-label>\n                <input name=\"nome\" matInput placeholder=\"Mario\" required [(ngModel)]=\"usuario.nome\"  >\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Email</mat-label>\n                <input name=\"email\" matInput placeholder=\"mario@smn.com.br\" required [(ngModel)]=\"usuario.email\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Confirme a senha</mat-label>\n                <input name=\"confirma\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.confirma\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"singin()\"><strong>Cadastrar</strong></button>\n            </form>\n        </mat-card>\n      </mat-tab>\n    </mat-tab-group>\n </div>\n"
 
 /***/ }),
 
@@ -686,7 +686,7 @@ var AuthInComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#cardapio{\n\tmargin: 0 auto;\n}\n\n.tab-cardapio{\n\tmargin: 10px auto;\n\ttext-align: center;\n\tline-height: 35px;\n\tfont-size: 18px;\n\tpadding: 2px;\n}\n\n.tab-cardapio th{ background-color: #10c853; padding: 0 10px; }\n\n.tab-cardapio td{ background-color: #757575; padding: 0 10px; }\n\n.mat-tab-group {width: 100%;}\n\n.mat-display-3{margin-bottom: 0!important;}\n\nbutton{ margin: 10px 0 0 auto; width: 120px;}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9jYXJkYXBpby9jYXJkYXBpby5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsY0FBYztBQUNmOztBQUVBO0NBQ0MsaUJBQWlCO0NBQ2pCLGtCQUFrQjtDQUNsQixpQkFBaUI7Q0FDakIsZUFBZTtDQUNmLFlBQVk7QUFDYjs7QUFDQSxrQkFBa0IseUJBQXlCLEVBQUUsZUFBZSxFQUFFOztBQUM5RCxrQkFBa0IseUJBQXlCLEVBQUUsZUFBZSxFQUFFOztBQUM5RCxnQkFBZ0IsV0FBVyxDQUFDOztBQUM1QixlQUFlLDBCQUEwQixDQUFDOztBQUMxQyxRQUFRLHFCQUFxQixFQUFFLFlBQVksQ0FBQyIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvY2FyZGFwaW8vY2FyZGFwaW8uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjYXJkYXBpb3tcblx0bWFyZ2luOiAwIGF1dG87XG59XG5cbi50YWItY2FyZGFwaW97XG5cdG1hcmdpbjogMTBweCBhdXRvO1xuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XG5cdGxpbmUtaGVpZ2h0OiAzNXB4O1xuXHRmb250LXNpemU6IDE4cHg7XG5cdHBhZGRpbmc6IDJweDtcbn1cbi50YWItY2FyZGFwaW8gdGh7IGJhY2tncm91bmQtY29sb3I6ICMxMGM4NTM7IHBhZGRpbmc6IDAgMTBweDsgfVxuLnRhYi1jYXJkYXBpbyB0ZHsgYmFja2dyb3VuZC1jb2xvcjogIzc1NzU3NTsgcGFkZGluZzogMCAxMHB4OyB9XG4ubWF0LXRhYi1ncm91cCB7d2lkdGg6IDEwMCU7fVxuLm1hdC1kaXNwbGF5LTN7bWFyZ2luLWJvdHRvbTogMCFpbXBvcnRhbnQ7fVxuYnV0dG9ueyBtYXJnaW46IDEwcHggMCAwIGF1dG87IHdpZHRoOiAxMjBweDt9XG4iXX0= */"
+module.exports = "#cardapio{\n\tmargin: 0 auto;\n}\n\n.tab-cardapio{\n\tmargin: 10px auto;\n\ttext-align: center;\n\tline-height: 35px;\n\tfont-size: 18px;\n\tpadding: 2px;\n}\n\n.tab-cardapio th{ background-color: #10c853; padding: 0 10px; }\n\n.tab-cardapio td{ background-color: #757575; padding: 0 10px; }\n\n.mat-tab-group {width: 100%;}\n\n.mat-display-3{margin-bottom: 0!important;}\n\nbutton{ margin: 10px 0 0 auto!important; width: 120px;}\n\n.btn-wrap{\n\tdisplay: flex;\n    flex-direction: column;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9jYXJkYXBpby9jYXJkYXBpby5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsY0FBYztBQUNmOztBQUVBO0NBQ0MsaUJBQWlCO0NBQ2pCLGtCQUFrQjtDQUNsQixpQkFBaUI7Q0FDakIsZUFBZTtDQUNmLFlBQVk7QUFDYjs7QUFDQSxrQkFBa0IseUJBQXlCLEVBQUUsZUFBZSxFQUFFOztBQUM5RCxrQkFBa0IseUJBQXlCLEVBQUUsZUFBZSxFQUFFOztBQUM5RCxnQkFBZ0IsV0FBVyxDQUFDOztBQUM1QixlQUFlLDBCQUEwQixDQUFDOztBQUMxQyxRQUFRLCtCQUErQixFQUFFLFlBQVksQ0FBQzs7QUFFdEQ7Q0FDQyxhQUFhO0lBQ1Ysc0JBQXNCO0FBQzFCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9jYXJkYXBpby9jYXJkYXBpby5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2NhcmRhcGlve1xuXHRtYXJnaW46IDAgYXV0bztcbn1cblxuLnRhYi1jYXJkYXBpb3tcblx0bWFyZ2luOiAxMHB4IGF1dG87XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0bGluZS1oZWlnaHQ6IDM1cHg7XG5cdGZvbnQtc2l6ZTogMThweDtcblx0cGFkZGluZzogMnB4O1xufVxuLnRhYi1jYXJkYXBpbyB0aHsgYmFja2dyb3VuZC1jb2xvcjogIzEwYzg1MzsgcGFkZGluZzogMCAxMHB4OyB9XG4udGFiLWNhcmRhcGlvIHRkeyBiYWNrZ3JvdW5kLWNvbG9yOiAjNzU3NTc1OyBwYWRkaW5nOiAwIDEwcHg7IH1cbi5tYXQtdGFiLWdyb3VwIHt3aWR0aDogMTAwJTt9XG4ubWF0LWRpc3BsYXktM3ttYXJnaW4tYm90dG9tOiAwIWltcG9ydGFudDt9XG5idXR0b257IG1hcmdpbjogMTBweCAwIDAgYXV0byFpbXBvcnRhbnQ7IHdpZHRoOiAxMjBweDt9XG5cbi5idG4td3JhcHtcblx0ZGlzcGxheTogZmxleDtcbiAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufSJdfQ== */"
 
 /***/ }),
 
@@ -697,7 +697,7 @@ module.exports = "#cardapio{\n\tmargin: 0 auto;\n}\n\n.tab-cardapio{\n\tmargin: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" id=\"cardapio\">\n\t\n\t<h1 class=\"mat-display-3\"> Cardápio </h1>\n\n\t<mat-tab-group color=\"accent\">\n\n\t\t<mat-tab *ngFor=\"let cardapio of cardapios\" [label]=\"cardapio.nome_dia_da_semana\">\n\n\t\t\t<mat-card class=\"dia-semana\">\n\t\t\t\t<table class=\"tab-cardapio\">\n\t\t\t\t\t<tr><th>Prato Principal</th><td>\n\t\t\t\t\t\t<mat-form-field color=\"accent\">\n\t\t\t\t\t\t    <mat-select [(ngModel)]=\"cardapio.escolha\">\n\t\t\t\t\t\t      <mat-option value=\"{{ cardapio.pratoPrincipal }}\" selected=\"selected\">\n\t\t\t\t\t\t        {{ cardapio.pratoPrincipal }}\n\t\t\t\t\t\t      </mat-option>\n\t\t\t\t\t\t      <mat-option value=\"{{ cardapio.opcao1 }}\">\n\t\t\t\t\t\t        {{ cardapio.opcao1 }}\n\t\t\t\t\t\t      </mat-option>\n\t\t\t\t\t\t      <mat-option value=\"{{ cardapio.opcao2 }}\">\n\t\t\t\t\t\t        {{ cardapio.opcao2 }}\n\t\t\t\t\t\t      </mat-option>\n\t\t\t\t\t\t    </mat-select>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</td></tr>\n\t\t\t\t\t<tr><th>Guarnição 1</th><td>{{ cardapio.guarnicao1 }}</td></tr>\n\t\t\t\t\t<tr><th>Guarnição 2</th><td>{{ cardapio.guarnicao2 }}</td></tr>\n\t\t\t\t\t<tr><th>Salada</th><td>{{ cardapio.salada }}</td></tr>\n\t\t\t\t\t<tr><th>Sobremesa</th><td>{{ cardapio.sobremesa }}</td></tr>\n\t\t\t\t\t<tr><th>Data</th><td>{{ cardapio.data }}</td></tr>\n\t\t\t\t</table>\n\t\t\t\t<mat-checkbox [(ngModel)]=\"cardapio.check\">Não vou almoçar aqui!</mat-checkbox>\n\t\t\t</mat-card>\n\t\t\t\n\t\t</mat-tab>\n\t\t\n\t</mat-tab-group>\n\t<button mat-flat-button color=\"accent\" (click)=\"confirma()\"><strong>Confirmar</strong></button>\n</div>\n"
+module.exports = "<div class=\"container\" id=\"cardapio\">\n\t\n\t<h1 class=\"mat-display-3\"> Cardápio </h1>\n\n\t<mat-tab-group color=\"accent\">\n\n\t\t<mat-tab *ngFor=\"let cardapio of cardapios\" [label]=\"cardapio.nome_dia_da_semana\">\n\n\t\t\t<mat-card class=\"dia-semana\">\n\t\t\t\t<table class=\"tab-cardapio\">\n\t\t\t\t\t<tr><th>Prato Principal</th><td>\n\t\t\t\t\t\t<mat-form-field color=\"accent\">\n\t\t\t\t\t\t    <mat-select [(ngModel)]=\"cardapio.escolha\">\n\t\t\t\t\t\t      <mat-option value=\"{{ cardapio.pratoPrincipal }}\" selected=\"selected\">\n\t\t\t\t\t\t        {{ cardapio.pratoPrincipal }}\n\t\t\t\t\t\t      </mat-option>\n\t\t\t\t\t\t      <mat-option value=\"{{ cardapio.opcao1 }}\">\n\t\t\t\t\t\t        {{ cardapio.opcao1 }}\n\t\t\t\t\t\t      </mat-option>\n\t\t\t\t\t\t      <mat-option value=\"{{ cardapio.opcao2 }}\">\n\t\t\t\t\t\t        {{ cardapio.opcao2 }}\n\t\t\t\t\t\t      </mat-option>\n\t\t\t\t\t\t    </mat-select>\n\t\t\t\t\t\t</mat-form-field>\n\t\t\t\t\t</td></tr>\n\t\t\t\t\t<tr><th>Guarnição 1</th><td>{{ cardapio.guarnicao1 }}</td></tr>\n\t\t\t\t\t<tr><th>Guarnição 2</th><td>{{ cardapio.guarnicao2 }}</td></tr>\n\t\t\t\t\t<tr><th>Salada</th><td>{{ cardapio.salada }}</td></tr>\n\t\t\t\t\t<tr><th>Sobremesa</th><td>{{ cardapio.sobremesa }}</td></tr>\n\t\t\t\t\t<tr><th>Data</th><td>{{ cardapio.data }}</td></tr>\n\t\t\t\t</table>\n\t\t\t\t<section class=\"btn-wrap\">\n\t\t\t\t\t<mat-checkbox [(ngModel)]=\"cardapio.check\">Não vou almoçar aqui!</mat-checkbox>\n\t\t\t\t\t<button mat-flat-button color=\"accent\" (click)=\"confirma(cardapio)\"><strong>Confirmar</strong></button>\t\n\t\t\t\t</section>\n\t\t\t\t\n\t\t\t</mat-card>\n\t\t\t\n\t\t</mat-tab>\n\t\t\n\t</mat-tab-group>\n\t\n</div>\n"
 
 /***/ }),
 
@@ -763,7 +763,7 @@ var CardapioComponent = /** @class */ (function () {
             _this.progress.offProgress();
         });
     };
-    CardapioComponent.prototype.confirma = function () {
+    CardapioComponent.prototype.confirma = function (cardapio) {
         var _this = this;
         this.progress.onProgress();
         var user = {
@@ -774,43 +774,44 @@ var CardapioComponent = /** @class */ (function () {
         console.log('chamada da função');
         retornoTrocas.subscribe(function (res) {
             console.log('res ' + res);
-            _this.cardapios.map(function (cardapio) {
-                if (cardapio.check == true) {
-                    var troca = {
-                        user: _this.usuario._id,
-                        cardapio: cardapio._id,
-                        pratoPrincipal: "desistiu"
-                    };
-                    retorno = _this.trocaServ.trocar(troca, res);
-                }
-                else if (cardapio.escolha != cardapio.pratoPrincipal) {
-                    var troca = {
-                        user: _this.usuario._id,
-                        cardapio: cardapio._id,
-                        pratoPrincipal: cardapio.escolha
-                    };
-                    retorno = _this.trocaServ.trocar(troca, res);
-                }
-                else {
-                    _this.snack.open('Nada a atualizar por aqui...', 'Fechar', { duration: 3000 });
-                    _this.progress.offProgress();
-                    return;
-                }
-                retorno.subscribe(function (res) {
-                    console.log(cardapio.nome_dia_da_semana + ' atualisado');
+            if (cardapio.check == true) {
+                var troca = {
+                    user: _this.usuario._id,
+                    cardapio: cardapio._id,
+                    pratoPrincipal: "desistiu"
+                };
+                retorno = _this.trocaServ.trocar(troca, res);
+            }
+            else if (cardapio.escolha != cardapio.pratoPrincipal) {
+                var troca = {
+                    user: _this.usuario._id,
+                    cardapio: cardapio._id,
+                    pratoPrincipal: cardapio.escolha
+                };
+                retorno = _this.trocaServ.trocar(troca, res);
+            }
+            else {
+                var troca = {
+                    user: _this.usuario._id,
+                    cardapio: cardapio._id,
+                    pratoPrincipal: cardapio.pratoPrincipal
+                };
+                retorno = _this.trocaServ.trocar(troca, res);
+            }
+            retorno.subscribe(function (res) {
+                console.log(cardapio.nome_dia_da_semana + ' atualisado');
+                _this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+                _this.progress.offProgress();
+            }, function (erro) {
+                console.log(erro);
+                if (erro.status == 201) {
                     _this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
                     _this.progress.offProgress();
-                }, function (erro) {
-                    console.log(erro);
-                    if (erro.status == 201) {
-                        _this.snack.open('Sucesso ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
-                        _this.progress.offProgress();
-                    }
-                    else {
-                        _this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
-                        _this.progress.offProgress();
-                    }
-                });
+                }
+                else {
+                    _this.snack.open('Erro ao atualizar ' + cardapio.nome_dia_da_semana, 'Fechar', { duration: 3000 });
+                    _this.progress.offProgress();
+                }
             });
         }, function (erro) {
             console.log('erro no get trocas ' + erro);
