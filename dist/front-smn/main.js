@@ -43,6 +43,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/feedback/feedback.component */ "./src/app/components/feedback/feedback.component.ts");
 /* harmony import */ var _components_adm_alterar_cardapio_alterar_cardapio_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/adm/alterar-cardapio/alterar-cardapio.component */ "./src/app/components/adm/alterar-cardapio/alterar-cardapio.component.ts");
 /* harmony import */ var _components_adm_trocas_trocas_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/adm/trocas/trocas.component */ "./src/app/components/adm/trocas/trocas.component.ts");
+/* harmony import */ var _components_adm_feedbacks_feedbacks_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/adm/feedbacks/feedbacks.component */ "./src/app/components/adm/feedbacks/feedbacks.component.ts");
+
 
 
 
@@ -58,7 +60,8 @@ var routes = [
     { path: 'cardapio', component: _components_cardapio_cardapio_component__WEBPACK_IMPORTED_MODULE_6__["CardapioComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
     { path: 'feedback', component: _components_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_7__["FeedbackComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
     { path: 'cardapios', component: _components_adm_alterar_cardapio_alterar_cardapio_component__WEBPACK_IMPORTED_MODULE_8__["AlterarCardapioComponent"], canActivate: [_guards_imadmin_guard__WEBPACK_IMPORTED_MODULE_4__["ImadminGuard"]] },
-    { path: 'trocas', component: _components_adm_trocas_trocas_component__WEBPACK_IMPORTED_MODULE_9__["TrocasComponent"], canActivate: [_guards_imadmin_guard__WEBPACK_IMPORTED_MODULE_4__["ImadminGuard"]] }
+    { path: 'trocas', component: _components_adm_trocas_trocas_component__WEBPACK_IMPORTED_MODULE_9__["TrocasComponent"], canActivate: [_guards_imadmin_guard__WEBPACK_IMPORTED_MODULE_4__["ImadminGuard"]] },
+    { path: 'feedbacks', component: _components_adm_feedbacks_feedbacks_component__WEBPACK_IMPORTED_MODULE_10__["FeedbacksComponent"], canActivate: [_guards_imadmin_guard__WEBPACK_IMPORTED_MODULE_4__["ImadminGuard"]] }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -94,7 +97,7 @@ module.exports = "#progresso{\n\tposition: fixed;\n    top: 0;\n    right: 0;\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\" id=\"header\">\n  <div id=\"menu\" *ngIf=\"mostrarMenu\">\n  \t<button mat-icon-button color=\"primary\" aria-label=\"Botão menu\">\n\t  \t<mat-icon id=\"iconeMenu\" color=\"primary\" (click)=\"drawer.toggle()\">\tmenu\n\t  \t</mat-icon>\n\t</button>\n  </div>\n  <span id=\"smn-topo\" class=\"\">{{ title }}</span>\n</mat-toolbar>\n\n<mat-drawer-container class=\"example-container\" [hasBackdrop]=\"true\">  \t\t\n\t<mat-drawer #drawer [mode]=\"over\">\n\t\t<div id=\"nome-menu\">\n\t\t\t<a>{{ usuario.nome }}</a>\n\t\t</div>\n\t\t<mat-list class=\"navs subheading-2\">\n\t\t\t<nav>\n\t\t\t\t<mat-divider></mat-divider>\n\t\t  \t\t<a routerLink=\"/cardapio\" (click)=\"drawer.toggle();\"><mat-list-item>Cardápio</mat-list-item></a>\n\t\t  \t\t<mat-divider></mat-divider>\n\t\t  \t\t<nav id=\"admin\">\n\t\t  \t\t\t<a *ngIf=\"usuario.admin\" routerLink=\"/cardapios\" (click)=\"drawer.toggle();\"><mat-list-item>Editar Cardapios</mat-list-item></a>\n\t\t  \t\t\t<mat-divider></mat-divider>\n\t\t  \t\t\t<a *ngIf=\"usuario.admin\" routerLink=\"/trocas\" (click)=\"drawer.toggle();\"><mat-list-item>Pedidos de Troca</mat-list-item></a>\n\t\t  \t\t\t<mat-divider></mat-divider>\n\t  \t\t\t</nav>\n\t\t  \t\t<a routerLink=\"/feedback\" (click)=\"drawer.toggle();\"><mat-list-item>Sugestões</mat-list-item></a>\n\t\t  \t\t<mat-divider></mat-divider>\n\t\t  \t\t<a routerLink=\"/cardapio\" (click)=\"drawer.toggle(); logOut()\"><mat-list-item>Sair</mat-list-item></a>\n\t\t  \t\t<mat-divider></mat-divider>\n\t\t\t</nav>\n\t\t</mat-list>\n\t</mat-drawer>     \n\t<mat-drawer-content>\n\t\t<router-outlet></router-outlet>\n\n\t\n\t\t<mat-toolbar  id=\"footer\" color=\"accent\">\n\t\t    Time de Estágio\n\t\t</mat-toolbar>\n    </mat-drawer-content>       \n</mat-drawer-container> \n\n<div id=\"progresso\" *ngIf=\"progress\">\n\t<mat-spinner color=\"accent\"></mat-spinner>\n</div>"
+module.exports = "<mat-toolbar color=\"primary\" id=\"header\">\n  <div id=\"menu\" *ngIf=\"mostrarMenu\">\n  \t<button mat-icon-button color=\"primary\" aria-label=\"Botão menu\">\n\t  \t<mat-icon id=\"iconeMenu\" color=\"primary\" (click)=\"drawer.toggle()\">\tmenu\n\t  \t</mat-icon>\n\t</button>\n  </div>\n  <span id=\"smn-topo\" class=\"\">{{ title }}</span>\n</mat-toolbar>\n\n<mat-drawer-container class=\"example-container\" [hasBackdrop]=\"true\">  \t\t\n\t<mat-drawer #drawer [mode]=\"over\">\n\t\t<div id=\"nome-menu\">\n\t\t\t<a>{{ usuario.nome }}</a>\n\t\t</div>\n\t\t<mat-list class=\"navs subheading-2\">\n\t\t\t<nav>\n\t\t\t\t<mat-divider></mat-divider>\n\t\t  \t\t<a routerLink=\"/cardapio\" (click)=\"drawer.toggle();\"><mat-list-item>Cardápio</mat-list-item></a>\n\t\t  \t\t<mat-divider></mat-divider>\n\t\t  \t\t<nav id=\"admin\" *ngIf=\"usuario.admin\">\n\t\t  \t\t\t<a routerLink=\"/cardapios\" (click)=\"drawer.toggle();\"><mat-list-item>Editar Cardapios</mat-list-item></a>\n\t\t  \t\t\t<mat-divider></mat-divider>\n\t\t  \t\t\t<a routerLink=\"/trocas\" (click)=\"drawer.toggle();\"><mat-list-item>Pedidos de Troca</mat-list-item></a>\n\t\t  \t\t\t<mat-divider></mat-divider>\n\t  \t\t\t</nav>\n\t\t  \t\t<a (click)=\"drawer.toggle(); feedback()\"><mat-list-item>Sugestões</mat-list-item></a>\n\t\t  \t\t<mat-divider></mat-divider>\n\t\t  \t\t<a routerLink=\"/cardapio\" (click)=\"drawer.toggle(); logOut()\"><mat-list-item>Sair</mat-list-item></a>\n\t\t  \t\t<mat-divider></mat-divider>\n\t\t\t</nav>\n\t\t</mat-list>\n\t</mat-drawer>     \n\t<mat-drawer-content>\n\t\t<router-outlet></router-outlet>\n\n\t\n\t\t<mat-toolbar  id=\"footer\" color=\"accent\">\n\t\t    Time de Estágio\n\t\t</mat-toolbar>\n    </mat-drawer-content>       \n</mat-drawer-container> \n\n<div id=\"progresso\" *ngIf=\"progress\">\n\t<mat-spinner color=\"accent\"></mat-spinner>\n</div>"
 
 /***/ }),
 
@@ -110,19 +113,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_auth_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/auth-service.service */ "./src/app/services/auth-service.service.ts");
-/* harmony import */ var _components_auth_in_auth_in_auth_in_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/auth-in/auth-in/auth-in.component */ "./src/app/components/auth-in/auth-in/auth-in.component.ts");
-/* harmony import */ var _services_progress_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/progress.service */ "./src/app/services/progress.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_auth_service_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/auth-service.service */ "./src/app/services/auth-service.service.ts");
+/* harmony import */ var _components_auth_in_auth_in_auth_in_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/auth-in/auth-in/auth-in.component */ "./src/app/components/auth-in/auth-in/auth-in.component.ts");
+/* harmony import */ var _services_progress_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/progress.service */ "./src/app/services/progress.service.ts");
+
 
 
 
 
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent(authService, authIn, progressServ) {
+    function AppComponent(authService, authIn, progressServ, router) {
         this.authService = authService;
         this.authIn = authIn;
         this.progressServ = progressServ;
+        this.router = router;
         this.title = 'SMN';
         this.progress = false;
         this.mostrarMenu = false;
@@ -142,15 +148,23 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.logOut = function () {
         this.authIn.logOut();
     };
+    AppComponent.prototype.feedback = function () {
+        if (this.usuario.admin) {
+            this.router.navigate(['feedbacks']);
+        }
+        else
+            this.router.navigate(['feedback']);
+    };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_auth_service_service__WEBPACK_IMPORTED_MODULE_2__["AuthServiceService"],
-            _components_auth_in_auth_in_auth_in_component__WEBPACK_IMPORTED_MODULE_3__["AuthInComponent"],
-            _services_progress_service__WEBPACK_IMPORTED_MODULE_4__["ProgressService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_auth_service_service__WEBPACK_IMPORTED_MODULE_3__["AuthServiceService"],
+            _components_auth_in_auth_in_auth_in_component__WEBPACK_IMPORTED_MODULE_4__["AuthInComponent"],
+            _services_progress_service__WEBPACK_IMPORTED_MODULE_5__["ProgressService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -204,6 +218,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _guards_imadmin_guard__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./guards/imadmin.guard */ "./src/app/guards/imadmin.guard.ts");
 /* harmony import */ var _components_adm_alterar_cardapio_alterar_cardapio_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/adm/alterar-cardapio/alterar-cardapio.component */ "./src/app/components/adm/alterar-cardapio/alterar-cardapio.component.ts");
 /* harmony import */ var _components_adm_trocas_trocas_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/adm/trocas/trocas.component */ "./src/app/components/adm/trocas/trocas.component.ts");
+/* harmony import */ var _components_adm_feedbacks_feedbacks_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/adm/feedbacks/feedbacks.component */ "./src/app/components/adm/feedbacks/feedbacks.component.ts");
+
 
 
 
@@ -250,7 +266,8 @@ var AppModule = /** @class */ (function () {
                 _components_cardapio_cardapio_component__WEBPACK_IMPORTED_MODULE_28__["CardapioComponent"],
                 _components_feedback_feedback_component__WEBPACK_IMPORTED_MODULE_31__["FeedbackComponent"],
                 _components_adm_alterar_cardapio_alterar_cardapio_component__WEBPACK_IMPORTED_MODULE_33__["AlterarCardapioComponent"],
-                _components_adm_trocas_trocas_component__WEBPACK_IMPORTED_MODULE_34__["TrocasComponent"]
+                _components_adm_trocas_trocas_component__WEBPACK_IMPORTED_MODULE_34__["TrocasComponent"],
+                _components_adm_feedbacks_feedbacks_component__WEBPACK_IMPORTED_MODULE_35__["FeedbacksComponent"]
             ],
             imports: [
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
@@ -402,6 +419,80 @@ var AlterarCardapioComponent = /** @class */ (function () {
             _angular_material_core__WEBPACK_IMPORTED_MODULE_5__["DateAdapter"]])
     ], AlterarCardapioComponent);
     return AlterarCardapioComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/adm/feedbacks/feedbacks.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/adm/feedbacks/feedbacks.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".card-feedback{ margin-bottom: 10px; background-color: #626262}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG0vZmVlZGJhY2tzL2ZlZWRiYWNrcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQixtQkFBbUIsRUFBRSx5QkFBeUIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FkbS9mZWVkYmFja3MvZmVlZGJhY2tzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZC1mZWVkYmFja3sgbWFyZ2luLWJvdHRvbTogMTBweDsgYmFja2dyb3VuZC1jb2xvcjogIzYyNjI2Mn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/adm/feedbacks/feedbacks.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/adm/feedbacks/feedbacks.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<article class=\"container\" id=\"feedbacks\">\n\t<h1 class=\"mat-display-3\"> <span class=\"noMobile\">Painel de </span>Sugestões </h1>\n\t\n\t<mat-card>\n\t\t<mat-accordion>\n\t\t  <mat-expansion-panel>\n\t\t    <mat-expansion-panel-header>\n\t\t      <mat-panel-title>\n\t\t        <strong>Sugestões</strong>\n\t\t      </mat-panel-title>\n\t\t    </mat-expansion-panel-header>\n\t\t       \n\t\t      <article *ngFor=\"let feedback of feedbacks\" >\n\t\t      \t<mat-card class=\"card-feedback\" *ngIf=\"filtrar(feedback, 'sugestao')\">\n\t\t\t  \t\t<p>{{ feedback.mensagem }}</p>\n\t\t\t    </mat-card>\n\t\t      </article>\n\t\t\t  \n\t\t  </mat-expansion-panel>\t\n\t\t  <mat-expansion-panel (opened)=\"panelOpenState = true\"\n\t\t                       (closed)=\"panelOpenState = false\">\n\t\t    <mat-expansion-panel-header>\n\t\t      <mat-panel-title>\n\t\t        <strong>Bugs</strong>\n\t\t      </mat-panel-title>\n\t\t    </mat-expansion-panel-header>\n\t\t    \n\t\t      <article *ngFor=\"let feedback of feedbacks\" >\n\t\t      \t<mat-card class=\"card-feedback\" *ngIf=\"filtrar(feedback, 'bug')\">\n\t\t\t  \t\t<p>{{ feedback.mensagem }}</p>\n\t\t\t    </mat-card>\n\t\t      </article>\n\n\t\t  </mat-expansion-panel>\n\t\t</mat-accordion>\n\t</mat-card>\n\t\n</article>"
+
+/***/ }),
+
+/***/ "./src/app/components/adm/feedbacks/feedbacks.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/adm/feedbacks/feedbacks.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: FeedbacksComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FeedbacksComponent", function() { return FeedbacksComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_feedback_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../services/feedback.service */ "./src/app/services/feedback.service.ts");
+
+
+
+var FeedbacksComponent = /** @class */ (function () {
+    function FeedbacksComponent(feedbackS) {
+        this.feedbackS = feedbackS;
+        this.feedbacks = {};
+    }
+    FeedbacksComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var retorno = this.feedbackS.listar();
+        retorno.subscribe(function (res) {
+            _this.feedbacks = res;
+            console.log(_this.feedbacks);
+        }, function (erro) {
+            console.log(erro);
+        });
+    };
+    FeedbacksComponent.prototype.filtrar = function (feedback, tipo) {
+        if (feedback.tipo == tipo) {
+            return true;
+        }
+        return false;
+    };
+    FeedbacksComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-feedbacks',
+            template: __webpack_require__(/*! ./feedbacks.component.html */ "./src/app/components/adm/feedbacks/feedbacks.component.html"),
+            styles: [__webpack_require__(/*! ./feedbacks.component.css */ "./src/app/components/adm/feedbacks/feedbacks.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_feedback_service__WEBPACK_IMPORTED_MODULE_2__["FeedbackService"]])
+    ], FeedbacksComponent);
+    return FeedbacksComponent;
 }());
 
 
