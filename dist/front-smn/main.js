@@ -432,7 +432,7 @@ var AlterarCardapioComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".card-feedback{ margin-bottom: 10px; background-color: #626262}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG0vZmVlZGJhY2tzL2ZlZWRiYWNrcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQixtQkFBbUIsRUFBRSx5QkFBeUIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FkbS9mZWVkYmFja3MvZmVlZGJhY2tzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZC1mZWVkYmFja3sgbWFyZ2luLWJvdHRvbTogMTBweDsgYmFja2dyb3VuZC1jb2xvcjogIzYyNjI2Mn0iXX0= */"
+module.exports = ".card-feedback{ margin-bottom: 10px; background-color: #626262!important}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG0vZmVlZGJhY2tzL2ZlZWRiYWNrcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGdCQUFnQixtQkFBbUIsRUFBRSxtQ0FBbUMiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FkbS9mZWVkYmFja3MvZmVlZGJhY2tzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZC1mZWVkYmFja3sgbWFyZ2luLWJvdHRvbTogMTBweDsgYmFja2dyb3VuZC1jb2xvcjogIzYyNjI2MiFpbXBvcnRhbnR9Il19 */"
 
 /***/ }),
 
@@ -443,7 +443,7 @@ module.exports = ".card-feedback{ margin-bottom: 10px; background-color: #626262
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"container\" id=\"feedbacks\">\n\t<h1 class=\"mat-display-3\"> <span class=\"noMobile\">Painel de </span>Sugestões </h1>\n\t\n\t<mat-card>\n\t\t<mat-accordion>\n\t\t  <mat-expansion-panel>\n\t\t    <mat-expansion-panel-header>\n\t\t      <mat-panel-title>\n\t\t        <strong>Sugestões</strong>\n\t\t      </mat-panel-title>\n\t\t    </mat-expansion-panel-header>\n\t\t       \n\t\t      <article *ngFor=\"let feedback of feedbacks\" >\n\t\t      \t<mat-card class=\"card-feedback\" *ngIf=\"filtrar(feedback, 'sugestao')\">\n\t\t\t  \t\t<p>{{ feedback.mensagem }}</p>\n\t\t\t    </mat-card>\n\t\t      </article>\n\t\t\t  \n\t\t  </mat-expansion-panel>\t\n\t\t  <mat-expansion-panel (opened)=\"panelOpenState = true\"\n\t\t                       (closed)=\"panelOpenState = false\">\n\t\t    <mat-expansion-panel-header>\n\t\t      <mat-panel-title>\n\t\t        <strong>Bugs</strong>\n\t\t      </mat-panel-title>\n\t\t    </mat-expansion-panel-header>\n\t\t    \n\t\t      <article *ngFor=\"let feedback of feedbacks\" >\n\t\t      \t<mat-card class=\"card-feedback\" *ngIf=\"filtrar(feedback, 'bug')\">\n\t\t\t  \t\t<p>{{ feedback.mensagem }}</p>\n\t\t\t    </mat-card>\n\t\t      </article>\n\n\t\t  </mat-expansion-panel>\n\t\t</mat-accordion>\n\t</mat-card>\n\t\n</article>"
+module.exports = "<article class=\"container\" id=\"feedbacks\">\n\t<h1 class=\"mat-display-3\"> <span class=\"noMobile\">Painel de </span>Sugestões </h1>\n\t\n\t<mat-card>\n\t\t<mat-accordion [multi]=\"true\">\n\t\t  <mat-expansion-panel>\n\t\t    <mat-expansion-panel-header>\n\t\t      <mat-panel-title>\n\t\t        <strong>Sugestões</strong>\n\t\t      </mat-panel-title>\n\t\t    </mat-expansion-panel-header>\n\t\t       \n\t\t      <article *ngFor=\"let feedback of feedbacks\" >\n\t\t      \t<mat-card class=\"card-feedback\" *ngIf=\"filtrar(feedback, 'sugestao')\">\n\t\t\t  \t\t<p>{{ feedback.mensagem }}</p>\n\t\t\t    </mat-card>\n\t\t      </article>\n\t\t\t  \n\t\t  </mat-expansion-panel>\t\n\t\t  <mat-expansion-panel >\n\t\t    <mat-expansion-panel-header>\n\t\t      <mat-panel-title>\n\t\t        <strong>Bugs</strong>\n\t\t      </mat-panel-title>\n\t\t    </mat-expansion-panel-header>\n\t\t    \n\t\t      <article *ngFor=\"let feedback of feedbacks\" >\n\t\t      \t<mat-card class=\"card-feedback\" *ngIf=\"filtrar(feedback, 'bug')\">\n\t\t\t  \t\t<p>{{ feedback.mensagem }}</p>\n\t\t\t    </mat-card>\n\t\t      </article>\n\n\t\t  </mat-expansion-panel>\n\t\t</mat-accordion>\n\t</mat-card>\n\t\n</article>"
 
 /***/ }),
 
@@ -460,22 +460,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_feedback_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../services/feedback.service */ "./src/app/services/feedback.service.ts");
+/* harmony import */ var _services_progress_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../services/progress.service */ "./src/app/services/progress.service.ts");
+
 
 
 
 var FeedbacksComponent = /** @class */ (function () {
-    function FeedbacksComponent(feedbackS) {
+    function FeedbacksComponent(feedbackS, progress) {
         this.feedbackS = feedbackS;
+        this.progress = progress;
         this.feedbacks = {};
     }
     FeedbacksComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.progress.onProgress();
         var retorno = this.feedbackS.listar();
         retorno.subscribe(function (res) {
             _this.feedbacks = res;
             console.log(_this.feedbacks);
+            _this.progress.offProgress();
         }, function (erro) {
             console.log(erro);
+            _this.progress.offProgress();
         });
     };
     FeedbacksComponent.prototype.filtrar = function (feedback, tipo) {
@@ -490,7 +496,8 @@ var FeedbacksComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./feedbacks.component.html */ "./src/app/components/adm/feedbacks/feedbacks.component.html"),
             styles: [__webpack_require__(/*! ./feedbacks.component.css */ "./src/app/components/adm/feedbacks/feedbacks.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_feedback_service__WEBPACK_IMPORTED_MODULE_2__["FeedbackService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_feedback_service__WEBPACK_IMPORTED_MODULE_2__["FeedbackService"],
+            _services_progress_service__WEBPACK_IMPORTED_MODULE_3__["ProgressService"]])
     ], FeedbacksComponent);
     return FeedbacksComponent;
 }());
@@ -506,7 +513,7 @@ var FeedbacksComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvYWRtL3Ryb2Nhcy90cm9jYXMuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = ".mat-list-item{background-color: #626262!important; margin-bottom: 10px; border-radius: 5px;}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9hZG0vdHJvY2FzL3Ryb2Nhcy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLGVBQWUsbUNBQW1DLEVBQUUsbUJBQW1CLEVBQUUsa0JBQWtCLENBQUMiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2FkbS90cm9jYXMvdHJvY2FzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWF0LWxpc3QtaXRlbXtiYWNrZ3JvdW5kLWNvbG9yOiAjNjI2MjYyIWltcG9ydGFudDsgbWFyZ2luLWJvdHRvbTogMTBweDsgYm9yZGVyLXJhZGl1czogNXB4O30iXX0= */"
 
 /***/ }),
 
@@ -517,7 +524,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<article class=\"container\" id=\"trocas\">\n\t<h1 class=\"mat-display-3\"> <span class=\"noMobile\">Painel de </span>Trocas </h1>\n\t<mat-tab-group color=\"accent\">\n\n\t\t<mat-tab *ngFor=\"let cardapio of cardapios\" [label]=\"cardapio.nome_dia_da_semana\">\n\n\t\t\t<mat-card class=\"dia-semana\">\n\t\t\t\t<mat-accordion>\n\t\t\t\t  <mat-expansion-panel>\n\t\t\t\t    <mat-expansion-panel-header>\n\t\t\t\t      <mat-panel-title>\n\t\t\t\t        <strong>{{ cardapio.opcao1 }}</strong>\n\t\t\t\t      </mat-panel-title>\n\t\t\t\t    </mat-expansion-panel-header>\n\t\t\t\t    <mat-list role=\"list\">\n\t\t\t\t      <div *ngFor=\"let troca of trocas\" >\n\t\t\t\t      \t<mat-list-item role=\"listitem\" *ngIf=\"filtrar(cardapio, troca, cardapio.opcao1)\">\n\t\t\t\t\t  \t\t{{ troca.user.nome }}\n\t\t\t\t\t    </mat-list-item>\n\t\t\t\t      </div>\n\t\t\t\t\t</mat-list>\n\t\t\t\t  </mat-expansion-panel>\n\t\t\t\t  <mat-expansion-panel (opened)=\"panelOpenState = true\"\n\t\t\t\t                       (closed)=\"panelOpenState = false\">\n\t\t\t\t    <mat-expansion-panel-header>\n\t\t\t\t      <mat-panel-title>\n\t\t\t\t        <strong>{{ cardapio.opcao2 }}</strong>\n\t\t\t\t      </mat-panel-title>\n\t\t\t\t    </mat-expansion-panel-header>\n\t\t\t\t    \t<mat-list role=\"list\">\n\t\t\t\t\t      <div *ngFor=\"let troca of trocas\" >\n\t\t\t\t\t      \t<mat-list-item role=\"listitem\" *ngIf=\"filtrar(cardapio, troca, cardapio.opcao2)\">\n\t\t\t\t\t\t  \t\t{{ troca.user.nome }}\n\t\t\t\t\t\t    </mat-list-item>\n\t\t\t\t\t      </div>\n\t\t\t\t\t\t</mat-list>\n\t\t\t\t  </mat-expansion-panel>\n\t\t\t\t  <mat-expansion-panel (opened)=\"panelOpenState = true\"\n\t\t\t\t                       (closed)=\"panelOpenState = false\">\n\t\t\t\t    <mat-expansion-panel-header>\n\t\t\t\t      <mat-panel-title>\n\t\t\t\t        <strong>Desistiu</strong>\n\t\t\t\t      </mat-panel-title>\n\t\t\t\t    </mat-expansion-panel-header>\n\t\t\t\t    \t<mat-list role=\"list\">\n\t\t\t\t\t      <div *ngFor=\"let troca of trocas\" >\n\t\t\t\t\t      \t<mat-list-item role=\"listitem\" *ngIf=\"filtrar(cardapio, troca, 'desistiu')\">\n\t\t\t\t\t\t  \t\t{{ troca.user.nome }}\n\t\t\t\t\t\t    </mat-list-item>\n\t\t\t\t\t      </div>\n\t\t\t\t\t\t</mat-list>\n\t\t\t\t  </mat-expansion-panel>\n\t\t\t\t</mat-accordion>\n\t\t\t</mat-card>\n\t\t\t\n\t\t</mat-tab>\n\t\t\n\t</mat-tab-group>\n</article>"
+module.exports = "<article class=\"container\" id=\"trocas\">\n\t<h1 class=\"mat-display-3\"> <span class=\"noMobile\">Painel de </span>Trocas </h1>\n\t<mat-tab-group color=\"accent\">\n\n\t\t<mat-tab *ngFor=\"let cardapio of cardapios\" [label]=\"cardapio.nome_dia_da_semana\">\n\n\t\t\t<mat-card class=\"dia-semana\">\n\t\t\t\t<mat-accordion [multi]=\"true\">\n\t\t\t\t  <mat-expansion-panel>\n\t\t\t\t    <mat-expansion-panel-header>\n\t\t\t\t      <mat-panel-title>\n\t\t\t\t        <strong>{{ cardapio.opcao1 }}</strong>\n\t\t\t\t      </mat-panel-title>\n\t\t\t\t    </mat-expansion-panel-header>\n\t\t\t\t    <mat-list role=\"list\">\n\t\t\t\t      <ng-container *ngFor=\"let troca of trocaFiltro(cardapio._id)\" >\n\t\t\t\t      \t<mat-list-item role=\"listitem\" *ngIf=\" troca.pratoPrincipal == cardapio.opcao1 \">\n\t\t\t\t\t  \t\t{{ troca.user.nome }}\n\t\t\t\t\t    </mat-list-item>\n\t\t\t\t      </ng-container>\n\t\t\t\t\t</mat-list>\n\t\t\t\t  </mat-expansion-panel>\n\t\t\t\t  <mat-expansion-panel >\n\t\t\t\t    <mat-expansion-panel-header>\n\t\t\t\t      <mat-panel-title>\n\t\t\t\t        <strong>{{ cardapio.opcao2 }}</strong>\n\t\t\t\t      </mat-panel-title>\n\t\t\t\t    </mat-expansion-panel-header>\n\t\t\t\t       <mat-list role=\"list\">\t\n\t\t\t    \t\t  <ng-container *ngFor=\"let troca of trocaFiltro(cardapio._id)\" >\n\t\t\t\t\t      \t<mat-list-item role=\"listitem\" *ngIf=\" troca.pratoPrincipal == cardapio.opcao2 \">\n\t\t\t\t\t\t  \t\t{{ troca.user.nome }}\n\t\t\t\t\t\t    </mat-list-item>\n\t\t\t\t\t      </ng-container>\n\t\t\t\t       </mat-list>\n\t\t\t\t  </mat-expansion-panel>\n\t\t\t\t  <mat-expansion-panel >\n\t\t\t\t    <mat-expansion-panel-header>\n\t\t\t\t      <mat-panel-title>\n\t\t\t\t        <strong>Desistiu</strong>\n\t\t\t\t      </mat-panel-title>\n\t\t\t\t    </mat-expansion-panel-header>\n\t\t\t\t    \t<mat-list role=\"list\">\t\n\t\t\t    \t\t  <ng-container *ngFor=\"let troca of trocaFiltro(cardapio._id)\" >\n\t\t\t\t\t      \t<mat-list-item role=\"listitem\" *ngIf=\" troca.pratoPrincipal == 'desistiu' \">\n\t\t\t\t\t\t  \t\t{{ troca.user.nome }}\n\t\t\t\t\t\t    </mat-list-item>\n\t\t\t\t\t      </ng-container>\n\t\t\t\t       </mat-list>\n\t\t\t\t  </mat-expansion-panel>\n\t\t\t\t</mat-accordion>\n\t\t\t</mat-card>\n\t\t\t\n\t\t</mat-tab>\n\t\t\n\t</mat-tab-group>\n</article>"
 
 /***/ }),
 
@@ -535,20 +542,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_cardapio_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../../services/cardapio.service */ "./src/app/services/cardapio.service.ts");
 /* harmony import */ var _services_troca_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../../services/troca.service */ "./src/app/services/troca.service.ts");
+/* harmony import */ var _services_progress_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../../services/progress.service */ "./src/app/services/progress.service.ts");
+
 
 
 
 
 var TrocasComponent = /** @class */ (function () {
-    function TrocasComponent(cardapioS, trocaS) {
+    function TrocasComponent(cardapioS, trocaS, progress) {
         this.cardapioS = cardapioS;
         this.trocaS = trocaS;
+        this.progress = progress;
         this.cardapios = {};
         this.trocas = {};
         this.dias = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
     }
     TrocasComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.progress.onProgress();
         var retornoCardapios = this.cardapioS.listar();
         retornoCardapios.subscribe(function (res) {
             _this.cardapios = res;
@@ -561,17 +572,14 @@ var TrocasComponent = /** @class */ (function () {
         retornoTrocas.subscribe(function (res) {
             _this.trocas = res;
             console.log(_this.trocas);
+            _this.progress.offProgress();
         }, function (erro) {
             console.log(erro);
+            _this.progress.offProgress();
         });
     };
-    TrocasComponent.prototype.filtrar = function (cardapio, troca, opcao) {
-        if (troca.cardapio._id == cardapio._id) {
-            if (troca.pratoPrincipal == opcao) {
-                return true;
-            }
-        }
-        return false;
+    TrocasComponent.prototype.trocaFiltro = function (id) {
+        return this.trocas.filter(function (troca) { return troca.cardapio._id === id; });
     };
     TrocasComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -580,7 +588,8 @@ var TrocasComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./trocas.component.css */ "./src/app/components/adm/trocas/trocas.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_cardapio_service__WEBPACK_IMPORTED_MODULE_2__["CardapioService"],
-            _services_troca_service__WEBPACK_IMPORTED_MODULE_3__["TrocaService"]])
+            _services_troca_service__WEBPACK_IMPORTED_MODULE_3__["TrocaService"],
+            _services_progress_service__WEBPACK_IMPORTED_MODULE_4__["ProgressService"]])
     ], TrocasComponent);
     return TrocasComponent;
 }());
@@ -607,7 +616,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" id=\"login\">\n   <mat-tab-group color=\"accent\">\n      <mat-tab label=\"Entrar\">\n          <mat-card class=\"card-login\">\n            <form id=\"formlogin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"login123\" required  [(ngModel)]=\"usuario.user\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"login()\"><strong>Entrar</strong></button>\n            </form>\n          </mat-card>  \n      </mat-tab>\n      <mat-tab label=\"Cadastrar\"> \n        <mat-card class=\"card-login\">\n          <form id=\"singin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"1234\" required [(ngModel)]=\"usuario.user\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Nome</mat-label>\n                <input name=\"nome\" matInput placeholder=\"Mario\" required [(ngModel)]=\"usuario.nome\"  >\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Email</mat-label>\n                <input name=\"email\" matInput placeholder=\"mario@smn.com.br\" required [(ngModel)]=\"usuario.email\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Confirme a senha</mat-label>\n                <input name=\"confirma\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.confirma\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"singin()\"><strong>Cadastrar</strong></button>\n            </form>\n        </mat-card>\n      </mat-tab>\n    </mat-tab-group>\n </div>\n"
+module.exports = "<div class=\"container\" id=\"login\">\n   <mat-tab-group color=\"accent\">\n      <mat-tab label=\"Entrar\">\n          <mat-card class=\"card-login\">\n            <form id=\"formlogin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"login123\" required  [(ngModel)]=\"usuario.user\" autocomplete=\"off\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"login()\"><strong>Entrar</strong></button>\n            </form>\n          </mat-card>  \n      </mat-tab>\n      <mat-tab label=\"Cadastrar\"> \n        <mat-card class=\"card-login\">\n          <form id=\"singin\">\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Usuário</mat-label>\n                <input name=\"user\" matInput placeholder=\"1234\" required [(ngModel)]=\"usuario.user\" autocomplete=\"off\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Nome</mat-label>\n                <input name=\"nome\" matInput placeholder=\"Mario\" required [(ngModel)]=\"usuario.nome\"  autocomplete=\"off\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\" >\n                <mat-label>Email</mat-label>\n                <input name=\"email\" matInput placeholder=\"mario@smn.com.br\" required [(ngModel)]=\"usuario.email\" autocomplete=\"off\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Senha</mat-label>\n                <input name=\"senha\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.senha\">\n              </mat-form-field>\n              <mat-form-field appearance=\"outline\" color=\"accent\"  >\n                <mat-label>Confirme a senha</mat-label>\n                <input name=\"confirma\" matInput type=\"password\" required=\"\" placeholder=\"*****\" [(ngModel)]=\"usuario.confirma\">\n              </mat-form-field>\n              <button mat-flat-button color=\"accent\" (click)=\"singin()\"><strong>Cadastrar</strong></button>\n            </form>\n        </mat-card>\n      </mat-tab>\n    </mat-tab-group>\n </div>\n"
 
 /***/ }),
 
