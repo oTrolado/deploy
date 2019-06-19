@@ -1,6 +1,7 @@
 const Troca = require('../models/Troca') ();
 const emailService = require('../services/email.service');
 const Usuario = require('../models/Usuario');
+const schedule = require('node-schedule');
 
 const controller = {};
 
@@ -104,5 +105,14 @@ controller.delete = function(req, res) {
         }
     );
 }
+
+
+const clearTrocas = schedule.scheduleJob('0 0 0 * * 6', ()=> {
+    console.log('Limpando as trocas');
+    Troca.remove().exec().then(
+        succes => console.log('apagamos as trocas'),
+        error => console.error(error)        
+    )    
+});
 
 module.exports = controller;
