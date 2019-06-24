@@ -1,4 +1,6 @@
 const Cardapio = require('../models/Cardapio') ();
+const notification = require('./notifications.controller');
+const usuario = require('./usuario.controller');
 
 const controller = {};
 
@@ -27,6 +29,7 @@ controller.getAll = function(req, res) {
 
     Cardapio.find().exec().then(
         function(cardapios) {
+            notification.clearAll();
             res.json(cardapios);
         },
 
@@ -59,7 +62,8 @@ controller.put = function(req, res) {
     Cardapio.findOneAndUpdate({_id: id}, req.body).exec().then(
 
         function(cardapio) {
-            if(cardapio){
+            if(cardapio){   
+                updateMessage(cardapio.data);
                 res.sendStatus(204).end();
             } else {
                 res.sendStatus(404).end();
@@ -92,5 +96,17 @@ controller.delete = function(req, res) {
         }
     );
 }
+
+function updateMessage(dia){
+    dia = new Date(dia).getDay();
+    const semana = ['domingo', 'segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sabado'];
+    usuario.getAll().exec().then(
+        res => notification.new('Cardapio de '+semana[dia]+' atualizado', res)
+    ).catch(e => console.error(e));
+}
+
+
+
+
 
 module.exports = controller;

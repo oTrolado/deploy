@@ -108,4 +108,8 @@ controller.delete = function(req, res) {
     );
 }
 
+controller.getAll = () => {
+    return Usuario.find()
+}
+
 module.exports = controller;
