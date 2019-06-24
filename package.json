@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "START \"\" node ./bin/www && START \"\" http-server public/ -p 8085"
+    "start": "nohup node ./bin/www & && nohup  http-server public/ &"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
