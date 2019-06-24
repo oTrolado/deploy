@@ -26,7 +26,7 @@ const notification = {
         
         usersM.forEach(userM => {
             send = connectedUsers.some( conneted => conneted === userM.user);
-            console.log(send)
+
             if(send)
                 users[userM.user].emit('notification', message);
         });
