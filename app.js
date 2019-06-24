@@ -15,8 +15,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+let filesPath = path.join(__dirname, 'public');
+app.use(express.static(filesPath));
 app.use(cors());
+app.set('views', filesPath);
 
 const usuario = require('./routes/usuario.route');
 app.use('/usuario', usuario);
