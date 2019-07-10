@@ -29,7 +29,6 @@ controller.getAll = function(req, res) {
 
     Cardapio.find().exec().then(
         function(cardapios) {
-            notification.clearAll();
             res.json(cardapios);
         },
 

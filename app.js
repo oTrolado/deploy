@@ -32,4 +32,7 @@ app.use('/troca', troca);
 const feedback = require('./routes/feedback.route');
 app.use('/feedback', feedback);
 
+const notification = require('./routes/notification.route');
+app.use('/notification', notification);
+
 module.exports = app;

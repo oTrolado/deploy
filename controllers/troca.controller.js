@@ -1,5 +1,4 @@
 const Troca = require('../models/Troca') ();
-const emailService = require('../services/email.service');
 const Usuario = require('../models/Usuario');
 const schedule = require('node-schedule');
 
@@ -57,7 +56,6 @@ controller.post = async function(req, res) {
     try {
         await Troca.create(req.body);
         await Usuario.findById(req.body.user).exec();
-        emailService.send('diegorugue@gmail.com', 'Troca do cardapio', global.EMAIL_TMPL2.replace('{0}', user.nome).replace('{1}', req.body.pratoPrincipal));
         res.sendStatus(201).end();
     } catch (e) {
         console.error(e);
@@ -107,7 +105,7 @@ controller.delete = function(req, res) {
 }
 
 
-const clearTrocas = schedule.scheduleJob('0 31 10 * * 3', ()=> {
+const clearTrocas = schedule.scheduleJob('0 34 10 * * 6', ()=> {
     console.log('Limpando as trocas');
     Troca.remove().exec().then(
         succes => console.log('apagamos as trocas'),
