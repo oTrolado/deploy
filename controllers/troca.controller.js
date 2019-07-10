@@ -107,11 +107,11 @@ controller.delete = function(req, res) {
 }
 
 
-const clearTrocas = schedule.scheduleJob('0 30 12 * * 3', ()=> {
+const clearTrocas = schedule.scheduleJob('0 31 10 * * 3', ()=> {
     console.log('Limpando as trocas');
     Troca.remove().exec().then(
         succes => console.log('apagamos as trocas'),
-        error => console.error(error)        
+        error => console.error(error)
     );
 });
 
