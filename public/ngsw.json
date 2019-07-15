@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1562843348711,
+  "timestamp": 1563201642009,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -11,7 +11,7 @@
         "/es2015-polyfills.c5dd28b362270c767b34.js",
         "/favicon.ico",
         "/index.html",
-        "/main.962432a35a6048522254.js",
+        "/main.39b52e41e72ffd9eee03.js",
         "/polyfills.8bbb231b43165d65d357.js",
         "/runtime.26209474bfa8dc87a77c.js",
         "/styles.e5231e24d1122c5d55f8.css"
@@ -43,7 +43,11 @@
     {
       "name": "api",
       "patterns": [
-        "http:\\/\\/cardapio-smn\\.herokuapp\\.com\\/[^/]*"
+        "http:\\/\\/cardapio-smn\\.herokuapp\\.com\\/.*",
+        "http:\\/\\/gaia-smn\\.herokuapp\\.com\\/cardapio\\/[^/]*",
+        "http:\\/\\/gaia-smn\\.herokuapp\\.com\\/troca\\/[^/]*",
+        "http:\\/\\/gaia-smn\\.herokuapp\\.com\\/notification\\/[^/]*",
+        "http:\\/\\/gaia-smn\\.herokuapp\\.com\\/feedback\\/[^/]*"
       ],
       "strategy": "performance",
       "maxSize": 20,
@@ -64,8 +68,8 @@
     "/assets/icons/icon-96x96.png": "df578ba640eba7a2572c147e7f678a2055c23609",
     "/es2015-polyfills.c5dd28b362270c767b34.js": "b7a81c61d32b0b12737f0c13f45973ba391cd7f9",
     "/favicon.ico": "2f5471c67b6dd764eccc53c9627fe08dd4572994",
-    "/index.html": "38b67206ac1d0c6814cef74ea6ff95a642b154ba",
-    "/main.962432a35a6048522254.js": "471a5618f0f44f4952a6813a4873d50887854785",
+    "/index.html": "699d4c9775d39acb20151ceca0fdae79db20a7f3",
+    "/main.39b52e41e72ffd9eee03.js": "3562b662e496052a03407233501097ec02a7a2b1",
     "/polyfills.8bbb231b43165d65d357.js": "ffa449995bf2eba2ccd0a002417214f7eb75e7b5",
     "/runtime.26209474bfa8dc87a77c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
     "/styles.e5231e24d1122c5d55f8.css": "01bebcb865fcc998a35a43db66bbb39457b63635"
