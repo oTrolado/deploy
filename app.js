@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const fs = require('fs');
 const cors = require('cors');
 
 var app = express();
@@ -34,5 +35,11 @@ app.use('/feedback', feedback);
 
 const notification = require('./routes/notification.route');
 app.use('/notification', notification);
+
+app.get('/**', (req, res) => {
+        fs.readFile(`${filesPath}/index.html`, 'utf8', (err, text) => {
+            res.send(text);
+        });
+    });
 
 module.exports = app;
