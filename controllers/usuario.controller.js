@@ -1,53 +1,61 @@
 const md5 = require('md5');
-const Usuario = require('../models/Usuario') ();
+const Usuario = require('../models/Usuario')();
 const emailService = require('../services/email.service');
+const jwt = require('jsonwebtoken');
+const promisify = require('util');
 
 const controller = {};
 
-controller.logar = function(req, res) {
+controller.logar = function (req, res) {
 
     const user = req.params.user;
     const senha = md5(req.body.senha + global.SALT_KEY);
 
-    Usuario.findOne({user: user}).exec().then(
+    Usuario.findOne({ user: user }).exec().then(
 
-        function(user) {
-            if(user.senha == senha) {
-                res.json(user).end();
+        function (user) {
+            if (user.senha == senha) {
+                res.json({
+                    user,
+                    token: jwt.sign({ user }, global.SALT_KEY, {
+                        expiresIn: '7d'
+                    }) 
+                }).end();
             } else {
                 res.sendStatus(404).end();
             }
         },
 
-        function(e) {
+        function (e) {
             console.error(e);
             res.sendStatus(500).end();
         }
     );
 }
 
-controller.get = function(req, res) {
+controller.get = async function (req, res) {
+    const token = req.headers.authorization;
 
-    const id = req.params.id;
+    const decode = await promisify(jwt.verify)(token, global.SALT_KEY);
 
-    Usuario.findById(id).exec().then(
+    Usuario.findById(decode.id).exec().then(
 
-        function(usuario) {
-            if(usuario) {
+        function (usuario) {
+            if (usuario) {
                 res.json(usuario).end();
             } else {
                 res.sendStatus(404).end();
             }
         },
 
-        function(e) {
+        function (e) {
             console.error(e);
             res.sendStatus(500).end();
         }
     );
 }
 
-controller.post = function(req, res) {
+controller.post = function (req, res) {
 
     Usuario.create({
         nome: req.body.nome,
@@ -55,53 +63,53 @@ controller.post = function(req, res) {
         email: req.body.email,
         senha: md5(req.body.senha + global.SALT_KEY)
     }).then(
-        function() {
+        function () {
             emailService.send(req.body.email, 'Bem vindo ao Cardapio da SMN', global.EMAIL_TMPL.replace('{0}', req.body.nome));
             res.sendStatus(201).end();
         },
 
-        function(e) {
+        function (e) {
             console.error(e);
             res.sendStatus(500).end();
         }
     );
 }
 
-controller.put = function(req, res) {
+controller.put = function (req, res) {
 
     const id = req.body._id;
 
-    Usuario.findOneAndUpdate({_id: id}, req.body).exec().then(
+    Usuario.findOneAndUpdate({ _id: id }, req.body).exec().then(
 
-        function(usuario) {
-            if(usuario){
+        function (usuario) {
+            if (usuario) {
                 res.sendStatus(204).end();
             } else {
                 res.sendStatus(404).end();
             }
         },
 
-        function(e) {
+        function (e) {
             console.error(e);
             res.sendStatus(500).end();
         }
     );
 }
 
-controller.delete = function(req, res) {
+controller.delete = function (req, res) {
 
     const id = req.params.id;
 
-    Usuario.findOneAndDelete({_id: id}).exec().then(
-        function(usuario) {
-            if(usuario) {
+    Usuario.findOneAndDelete({ _id: id }).exec().then(
+        function (usuario) {
+            if (usuario) {
                 res.sendStatus(204).end();
             } else {
                 res.sendStatus(404).end();
             }
         },
 
-        function(e) {
+        function (e) {
             console.error(e);
             res.sendStatus(500).end();
         }
