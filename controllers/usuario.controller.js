@@ -17,9 +17,9 @@ controller.logar = function (req, res) {
             if (user.senha == senha) {
                 res.json({
                     user,
-                    token: jwt.sign({ user }, global.SALT_KEY, {
+                    token: jwt.sign({ id: user._id }, global.SALT_KEY, {
                         expiresIn: '7d'
-                    }) 
+                    })
                 }).end();
             } else {
                 res.sendStatus(404).end();
@@ -42,7 +42,14 @@ controller.get = async function (req, res) {
 
         function (usuario) {
             if (usuario) {
-                res.json(usuario).end();
+                const {admin} = usuario;
+                res.json({
+                    user: {
+                        admin,
+                        email,
+                        nome
+                    }
+                }).end();
             } else {
                 res.sendStatus(404).end();
             }
