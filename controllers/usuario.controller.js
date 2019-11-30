@@ -15,8 +15,15 @@ controller.logar = function (req, res) {
 
         function (user) {
             if (user.senha == senha) {
+                const { admin, email, nome, user } = user;
+
                 res.json({
-                    user,
+                    user: {
+                        admin,
+                        email,
+                        nome,
+                        user
+                    },
                     token: jwt.sign({ id: user._id }, global.SALT_KEY, {
                         expiresIn: '7d'
                     })
@@ -42,12 +49,13 @@ controller.get = async function (req, res) {
 
         function (usuario) {
             if (usuario) {
-                const {admin} = usuario;
+                const { admin, email, nome, user } = usuario;
                 res.json({
                     user: {
                         admin,
                         email,
-                        nome
+                        nome,
+                        user
                     }
                 }).end();
             } else {
