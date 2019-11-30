@@ -2,7 +2,7 @@ const md5 = require('md5');
 const Usuario = require('../models/Usuario')();
 const emailService = require('../services/email.service');
 const jwt = require('jsonwebtoken');
-const promisify = require('util');
+const promisify = require('util').promisify;
 
 const controller = {};
 
@@ -42,7 +42,8 @@ controller.logar = function (req, res) {
 
 controller.get = async function (req, res) {
     const token = req.headers.authorization;
-
+    console.log(req.headers.authorization);
+    
     const decode = await promisify(jwt.verify)(token, global.SALT_KEY);
 
     Usuario.findById(decode.id).exec().then(
