@@ -15,7 +15,7 @@ controller.logar = function (req, res) {
 
         function (user) {
             if (user.senha == senha) {
-                const { admin, email, nome, user } = user;
+                const { admin, email, nome, user, _id } = user;
 
                 res.json({
                     user: {
@@ -24,7 +24,7 @@ controller.logar = function (req, res) {
                         nome,
                         user
                     },
-                    token: jwt.sign({ id: user._id }, global.SALT_KEY, {
+                    token: jwt.sign({ id: _id }, global.SALT_KEY, {
                         expiresIn: '7d'
                     })
                 }).end();
