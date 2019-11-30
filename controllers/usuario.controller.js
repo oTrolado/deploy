@@ -13,9 +13,9 @@ controller.logar = function (req, res) {
 
     Usuario.findOne({ user: user }).exec().then(
 
-        function (user) {
-            if (user.senha == senha) {
-                const { admin, email, nome, user, _id } = user;
+        function (usuario) {
+            if (usuario.senha == senha) {
+                const { admin, email, nome, user, _id } = usuario;
 
                 res.json({
                     user: {
